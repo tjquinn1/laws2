@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resource :reps
+  resources :reps
+  resources :bills
 
   get 'home/index'
 

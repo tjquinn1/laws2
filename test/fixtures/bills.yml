@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  summary: MyText
+  billNumber: MyString
+  propDate: 2017-04-23
+
+two:
+  name: MyString
+  summary: MyText
+  billNumber: MyString
+  propDate: 2017-04-23

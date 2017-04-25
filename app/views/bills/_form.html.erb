@@ -1,0 +1,59 @@
+<%= form_for(bill) do |f| %>
+  <% if bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+      <% bill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+  	<%= f.label :name %><br>
+    <%= f.text_field :name %>
+</div>
+
+<div>
+  	<%= f.label :summary %><br>
+    <%= f.text_area :summary %>
+</div>
+
+<div>
+  	<%= f.label :billNumber, "Bill Number" %><br>
+    <%= f.text_field :billNumber %>
+</div>
+
+<div>
+  	<%= f.label :propDate, "Date Proposed" %><br>
+    <%= f.date_field :propDate %>
+</div>
+
+<%= f.fields_for :cosponsors do |cosponsors_form| %>
+
+  <div>
+    <%= f.label :rep_id, "Cosponsor"%>
+
+    <%= cosponsors_form.collection_select(:rep_id, Rep.all, :id, :firstName) %>
+
+  </div>
+
+<% end %>
+
+<%= f.fields_for :sponsors do |sponsors_form| %>
+
+  <div>
+    <%= f.label :rep_id, "Sponsor"%>
+
+    <%= sponsors_form.collection_select(:rep_id, Rep.all, :id, :firstName) %>
+
+  </div>
+
+<% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

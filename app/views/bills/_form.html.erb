@@ -31,27 +31,23 @@
     <%= f.date_field :propDate %>
 </div>
 
-<%= f.fields_for :cosponsors do |cosponsors_form| %>
-
-  <div>
-    <%= f.label :rep_id, "Cosponsor"%>
-
-    <%= cosponsors_form.collection_select(:rep_id, Rep.all, :id, :firstName) %>
-
+<div id="sponsors">
+<%= f.fields_for(:sponsors) do |sponsor| %>
+     <%= render 'sponsor_fields', :f => sponsor %>
+<% end %>
+    <div class="links">
+     <%= link_to_add_association 'add sponsors', f, :sponsors %>
+     </div>
   </div>
 
+  <div id="cosponsors">
+<%= f.fields_for(:cosponsors) do |cosponsor| %>
+     <%= render 'cosponsor_fields', :f => cosponsor %>
 <% end %>
-
-<%= f.fields_for :sponsors do |sponsors_form| %>
-
-  <div>
-    <%= f.label :rep_id, "Sponsor"%>
-
-    <%= sponsors_form.collection_select(:rep_id, Rep.all, :id, :firstName) %>
-
+    <div class="links">
+     <%= link_to_add_association 'add cosponsors', f, :cosponsors %>
+     </div>
   </div>
-
-<% end %>
 
   <div class="actions">
     <%= f.submit %>

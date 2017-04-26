@@ -1,0 +1,8 @@
+<div class="nested-fields">
+    <div class="field">
+        <%= f.label :rep_id, "Cosponsor"%>
+    <br>
+        <%= f.collection_select(:rep_id, Rep.all, :id, :firstName) %>
+  </div> 
+ <%= link_to_remove_association "X", f %>
+</div>

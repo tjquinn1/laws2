@@ -2,24 +2,24 @@
 
 <h1>Bills</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @bills.each do |bill| %>
-      <tr>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"><%= bill.name  %></h4>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <%= link_to 'Show', bill %>
+            <%= link_to 'Edit', edit_bill_path(bill) %>
+            <%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>   
+    <% end %>
+</div>
 <br>
 
 <%= link_to 'New Bill', new_bill_path %>
+
+</div>

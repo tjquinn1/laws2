@@ -12,6 +12,8 @@ class Rep < ApplicationRecord
 	accepts_nested_attributes_for :cosponsors
 	accepts_nested_attributes_for :sponsors
 
+  mount_uploader :image, ReptarUploader
+
 def fullname
   "#{first_name} #{last_name}"
 end

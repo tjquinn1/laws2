@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @rep.image_url(:thumb).to_s %>
+
 <%= link_to 'Edit', edit_rep_path(@rep) %> |
 <%= link_to 'Back', reps_path %>

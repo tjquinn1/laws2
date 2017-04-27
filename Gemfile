@@ -38,6 +38,12 @@ gem "cocoon"
 # Bootstrap 4
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
+# Carrier Wave
+gem 'carrierwave', '~> 1.0'
+
+#miniMagick
+gem "mini_magick"
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end

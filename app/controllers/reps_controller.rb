@@ -50,7 +50,6 @@ class RepsController < ApplicationController
       end
     end
   end
-
   # DELETE /reps/1
   # DELETE /reps/1.json
   def destroy
@@ -69,6 +68,6 @@ class RepsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rep_params
-       params.require(:rep).permit(:firstName, :lastName, :state, :chamber, :party, :district, :streetAddress, :zipcode, :stateAddress, :city, :dateStart, :dateEnd, :congStart, :congEnd)
+       params.require(:rep).permit(:firstName, :lastName, :state, :chamber, :party, :district, :streetAddress, :zipcode, :stateAddress, :city, :dateStart, :dateEnd, :congStart, :congEnd, :image)
     end
 end

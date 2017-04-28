@@ -1,6 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @rep.image_url(:thumb).to_s %>
+
+<div class="row">
+	<%= image_tag @rep.image_url(:thumb).to_s %>
+</div>
+
+<div class="row">
+	<h1><%= @rep.firstName %> <%= @rep.lastName %></h1>
+</div>
+
+<div class="row">
+	<h6>State Represented: </h6><p class="center-cont"><%= @rep.state %></p>
+</div>
 
 <%= link_to 'Edit', edit_rep_path(@rep) %> |
 <%= link_to 'Back', reps_path %>

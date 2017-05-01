@@ -1,26 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Reps</h1>
-<% @reps.each do |rep| %>
-		
-	<%= link_to(rep) do %>
-		<div class="card text-center" style="width: 20rem;">
-			<%= image_tag rep.image_url(:thumb).to_s, alt: "Rep Image", class: "card-img-top" %>
-			<div class="card-block">
-				<h4 class="card-title"><%= rep.firstName %> <%= rep.lastName %></h4>
-				<p class="card-text"><%= rep.chamber %> <%= rep.party %></p>
 
-				<div class="btn-group btn-group-sm">
-					<%= link_to 'Show', rep, :class => "btn btn-outline-info btn-sm" %>
-					<%= link_to 'Edit', edit_rep_path(rep), :class => "btn btn-outline-info btn-sm" %>
-					<%= link_to 'Destroy', rep, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-info btn-sm" %>
+<div class="card-deck">
+	<div class="card-columns">
+<% @reps.each do |rep| %>
+
+
+		<%= link_to(rep) do %>
+			<div class="card text-center" style="width: 20rem;">
+				<%= image_tag rep.image_url(:thumb).to_s, alt: "Rep Image", class: "card-img-top" %>
+				<div class="card-block">
+					<h4 class="card-title"><%= rep.firstName %> <%= rep.lastName %></h4>
+					<p class="card-text"><%= rep.chamber %> <%= rep.party %></p>
+
+					<div class="btn-group btn-group-sm">
+						<%= link_to 'Show', rep, :class => "btn btn-outline-info btn-sm" %>
+						<%= link_to 'Edit', edit_rep_path(rep), :class => "btn btn-outline-info btn-sm" %>
+						<%= link_to 'Destroy', rep, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-info btn-sm" %>
+					</div>
 				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
+
 
 <% end %>
-
+</div>
+</div>
 
 <br>
 

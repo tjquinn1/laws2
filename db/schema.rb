@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427174532) do
+ActiveRecord::Schema.define(version: 20170501052241) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "summary",    limit: 65535
     t.string   "billNumber"
     t.date     "propDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "point",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "bill_id"
+    t.index ["bill_id"], name: "index_bps_on_bill_id", using: :btree
   end
 
   create_table "cosponsors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170427174532) do
     t.index ["rep_id"], name: "index_sponsors_on_rep_id", using: :btree
   end
 
+  add_foreign_key "bps", "bills"
   add_foreign_key "cosponsors", "bills"
   add_foreign_key "cosponsors", "reps"
   add_foreign_key "sponsors", "bills"

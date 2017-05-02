@@ -68,6 +68,6 @@ class RepsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rep_params
-       params.require(:rep).permit(:firstName, :lastName, :state, :chamber, :party, :district, :streetAddress, :zipcode, :stateAddress, :city, :dateStart, :dateEnd, :congStart, :congEnd, :image)
+       params.require(:rep).permit(:firstName, :lastName, :state, :chamber, :party, :district, :streetAddress, :zipcode, :stateAddress, :city, :dateStart, :dateEnd, :congStart, :congEnd, :image, :twitter, :facebook, :youtube)
     end
 end

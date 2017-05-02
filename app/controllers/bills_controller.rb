@@ -73,6 +73,6 @@ class BillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params
-       params.require(:bill).permit(:name, :summary, :billNumber, :propDate, sponsors_attributes: [:id, :rep_id, :bill_id, :_destroy], cosponsors_attributes: [:id, :rep_id, :bill_id, :_destroy])
+       params.require(:bill).permit(:name, :summary, :billNumber, :propDate, sponsors_attributes: [:id, :rep_id, :bill_id, :_destroy], cosponsors_attributes: [:id, :rep_id, :bill_id, :_destroy], bps_attributes: [:id, :point, :bill_id, :_destroy])
     end
 end

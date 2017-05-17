@@ -19,6 +19,16 @@
 </div>
 
 <div class="row">
+	<% @rep.bills.each do |bill| %>
+			<%= bill.name %>
+	<% end %>
+</div>
+
+<div class="row">
+	<a href = "https://www.<%= @rep.lastName %>.senate.gov/public/" target="_blank">Offical Website</a>
+</div>
+
+<div class="row">
 	<h6>State Represented: </h6><p class="center-cont"><%= @rep.state %></p>
 </div>
 
@@ -31,7 +41,7 @@
 </div>
 <div class="row col-6 offset-3">
 	<div class="embed-responsive embed-responsive-16by9">
-		<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @rep.youtube %>" width="550" height="400"></iframe>
+		<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/?listType=user_uploads&list=<%= @rep.youtube %>" width="550" height="400" allowfullscreen=true></iframe>
 	</div>
 </div>
 

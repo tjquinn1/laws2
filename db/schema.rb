@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502205934) do
+ActiveRecord::Schema.define(version: 20170503193349) do
 
   create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20170502205934) do
     t.string   "state"
     t.string   "chamber"
     t.string   "party"
-    t.integer  "district"
     t.string   "streetAddress"
     t.integer  "zipcode"
     t.string   "stateAddress"
@@ -58,6 +57,24 @@ ActiveRecord::Schema.define(version: 20170502205934) do
     t.string   "twitter"
     t.string   "facebook"
     t.string   "youtube"
+    t.string   "gender"
+    t.string   "url"
+    t.string   "phone"
+    t.string   "contact"
+    t.string   "rss"
+    t.string   "youtubeid"
+    t.string   "bioguide"
+    t.string   "thomas"
+    t.string   "opensecret"
+    t.string   "lis"
+    t.string   "cspan"
+    t.string   "govtrack"
+    t.string   "votesmart"
+    t.string   "ballotpedia"
+    t.string   "icpsr"
+    t.string   "wikipedia"
+    t.string   "dob"
+    t.string   "district"
   end
 
   create_table "sponsors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
